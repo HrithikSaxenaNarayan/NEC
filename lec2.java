@@ -22,13 +22,45 @@ public class lec2 {
 
     public static void forwardOrder(int n) {
         int pow = power(n);
-        while(n != 0) {
+        while (n != 0) {
             int ans = n / pow;
             System.out.println(ans);
             n %= pow;
             pow /= 10;
         }
     }
+
+    public static int countDigit(int n) {
+        int count = 0;
+        while (n != 0) {
+            n /= 10;
+            count++;
+        }
+        return count;
+    }
+
+    public static int rotateNumber(int n, int r) {
+        int countDig = countDigit(n);
+        r %= countDig;
+        if (r < 0) {
+            r += countDig;
+        }
+        int div = 1;
+        int mul = 1;
+
+        for (int i = 1; i <= countDig; i++) {
+            if (i <= r) {
+                div *= 10;
+            } else {
+                mul *= 10;
+            }
+        }
+        int a = n % div;
+        int b = n / div;
+
+        return (a * mul + b);
+    }
+
     public static void main(String[] args) {
         forwardOrder(scn.nextInt());
     }
