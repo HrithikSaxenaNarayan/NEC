@@ -51,3 +51,19 @@ def rotate_number(n, r):
     b = n // div
 
     return a * mul + b
+
+def inverse_of_number(n):
+    inv = 0
+    org_pos = 1
+
+    while n != 0:
+        org_dig = n % 10
+        inv_dig = org_pos
+        inv_pos = org_dig
+
+        inv += inv_dig * (10 ** (inv_pos - 1))
+
+        n //= 10
+        org_pos += 1
+
+    print(inv)
