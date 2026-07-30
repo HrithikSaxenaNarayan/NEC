@@ -61,6 +61,22 @@ public class lec2 {
         return (a * mul + b);
     }
 
+    public static void inverseOfNumbers(int n) {
+        int inv = 0;
+        int orgPos = 1;
+        while (n != 0) {
+            int orgDig = n % 10;
+            int invDig = orgPos;
+            int invPos = orgDig;
+
+            inv += invDig * (int) Math.pow(10, invPos - 1);
+
+            n /= 10;
+            orgPos++;
+        }
+        System.out.println(inv);
+    }
+
     public static void main(String[] args) {
         forwardOrder(scn.nextInt());
     }
