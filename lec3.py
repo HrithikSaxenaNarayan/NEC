@@ -9,3 +9,28 @@ def binomial_pattern(num):
 
         print()
         
+
+def num_pattern4(n):
+    nsp = n - 1
+    nst = 1
+
+    for row in range(1, n + 1):
+
+        for _ in range(nsp):
+            print("\t", end="")
+
+        val = row
+        for cst in range(1, nst + 1):
+            print(val, end="\t")
+
+            if cst <= nst // 2:
+                val += 1
+            else:
+                val -= 1
+
+        nsp -= 1
+        nst += 2
+        print("\t")
+        
+        
+
