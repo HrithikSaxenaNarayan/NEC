@@ -31,6 +31,34 @@ def num_pattern4(n):
         nsp -= 1
         nst += 2
         print("\t")
+
+def numW(n):
+    nst = 1
+    nsp = (2 * n) - 3
+
+    for row in range(1, n + 1):
+        val = 1
+
+        # Left side
+        for _ in range(nst):
+            print(val, end="\t")
+            val += 1
+
+        # Spaces
+        for _ in range(nsp):
+            print(end="\t")
+
+        # Right side
+        for cst in range(1, nst + 1):
+            if row == n and cst == 1:
+                val -= 1
+                continue
+            val -= 1
+            print(val, end="\t")
+
+        nst += 1
+        nsp -= 2
+        print()
         
         
 
