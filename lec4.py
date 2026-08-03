@@ -11,6 +11,15 @@ def decimal_to_binary(n):
     return ans
 
 
-# Example
-n = 13
-print(decimal_to_binary(n))  # Output: 1101
+
+def binary_to_decimal(n):
+    pwr = 1
+    ans = 0
+
+    while n != 0:
+        rem = n % 10
+        ans += rem * pwr
+        pwr *= 2
+        n //= 10
+
+    return ans
