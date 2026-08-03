@@ -23,3 +23,6 @@ def binary_to_decimal(n):
         n //= 10
 
     return ans
+
+
+
