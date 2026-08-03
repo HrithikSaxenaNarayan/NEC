@@ -14,6 +14,19 @@ public class lec4{
         return ans;
     }
 
+    public static int binaryToDecimal(int n) {
+        int pwr = 1;
+        int ans = 0;
+        while (n != 0) {
+            int rem = n % 10;
+            ans += rem * pwr;
+            pwr *= 2;
+            n /= 10;
+        }
+        return ans;
+
+    }
+
     public static void main(String[] ARGS) {
         decimal to binary(scn.nextInt());
     }
