@@ -23,8 +23,21 @@ public class lec5{
         }
     }
 
+    public static void findDataInMattrix(int[][] arr, int data) {
+        int n = arr.length;
+        int m = arr[0].length;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (data == arr[i][j]) {
+                    System.out.println("(" + i + " , " + j + ")");
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args){
-        display(input(scn.nextInt(), scn.nextInt()));
+        findDataInMattrix(input(scn.nextInt(), scn.nextInt()), scn.nextInt());
     }
 }
