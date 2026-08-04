@@ -53,6 +53,6 @@ public class lec4{
     }
 
     public static void main(String[] ARGS) {
-        decimal to binary(scn.nextInt());
+        decimalToBinary(scn.nextInt());
     }
 }

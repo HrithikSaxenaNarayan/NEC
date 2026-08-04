@@ -28,6 +28,21 @@ def find_data_in_matrix(arr, data):
         for j in range(m):
             if data == arr[i][j]:
                 print(f"({i} , {j})")
+                
+
+def state_of_wakanda1(arr):
+    n = len(arr)
+    m = len(arr[0])
+
+    for j in range(m):
+        if j % 2 == 0:
+            for i in range(n):
+                print(arr[i][j], end="\t")
+        else:
+            for i in range(n - 1, -1, -1):
+                print(arr[i][j], end="\t")
+
+        print()
 
 
 # Main
