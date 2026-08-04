@@ -20,6 +20,16 @@ def display(arr):
         print()
 
 
+def find_data_in_matrix(arr, data):
+    n = len(arr)
+    m = len(arr[0])
+
+    for i in range(n):
+        for j in range(m):
+            if data == arr[i][j]:
+                print(f"({i} , {j})")
+
+
 # Main
 n = int(input())
 m = int(input())
