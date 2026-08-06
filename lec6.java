@@ -1,9 +1,10 @@
 import java.util.*;
-public class lec6{
+
+public class lec6 {
     public static Scanner scn = new Scanner(System.in);
 
-        public static int[] input(int n){
-        int[] arr = new int[n] ;
+    public static int[] input(int n) {
+        int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scn.nextInt();
         }
@@ -16,9 +17,8 @@ public class lec6{
         }
         System.out.println();
     }
-    
 
-    public static int[] oddLeftEvenRyt(int[] arr){
+    public static int[] oddLeftEvenRyt(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 != 0) {
                 arr[i] *= -1;
@@ -28,13 +28,13 @@ public class lec6{
         Arrays.sort(arr);
 
         // for (int i = 0; i < arr.length; i++) {
-        //     if (arr[i] < 0) {
-        //         arr[i] *= -1;
-        //     }
+        // if (arr[i] < 0) {
+        // arr[i] *= -1;
+        // }
         // }
 
         int idx = 0;
-        while(arr[idx] < 0) {
+        while (arr[idx] < 0) {
             arr[idx] *= -1;
             idx++;
         }
@@ -42,7 +42,44 @@ public class lec6{
         return arr;
     }
 
-    public static void main(String[] args){
+    public static void stateOfWakanda5Spiral(int[][] arr) {
+        int n = arr.length, m = arr[0].length, tnel = n * m;
+        int rmin = 0, rmax = n - 1;
+        int cmin = 0, cmax = m - 1;
+
+        while (tnel > 0) {
+            for (int r = rmin; r <= rmax && tnel > 0; r++) {
+                System.out.print(arr[r][cmin] + " ");
+                tnel--;
+            }
+            System.out.println();
+            cmin++;
+
+            for (int c = cmin; c <= cmax && tnel > 0; c++) {
+                System.out.print(arr[rmax][c] + " ");
+                tnel--;
+            }
+            System.out.println();
+            rmax--;
+
+            for (int r = rmax; r >= rmin && tnel > 0; r--) {
+                System.out.print(arr[r][cmax] + " ");
+                tnel--;
+            }
+            System.out.println();
+            cmax--;
+
+            for (int c = cmax; c >= cmin && tnel > 0; c--) {
+                System.out.print(arr[rmin][c] + " ");
+                tnel--;
+            }
+            System.out.println();
+            rmin++;
+        }
+
+    }
+
+    public static void main(String[] args) {
         display(oddLeftEvenRyt(input(scn.nextInt())));
     }
 }

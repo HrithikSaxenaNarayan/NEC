@@ -11,3 +11,48 @@ def odd_left_even_right(arr):
         idx += 1
 
     return arr
+
+
+def state_of_wakanda5_spiral(arr):
+    n = len(arr)
+    m = len(arr[0])
+    tnel = n * m
+
+    rmin = 0
+    rmax = n - 1
+    cmin = 0
+    cmax = m - 1
+
+    while tnel > 0:
+
+        for r in range(rmin, rmax + 1):
+            if tnel == 0:
+                break
+            print(arr[r][cmin], end=" ")
+            tnel -= 1
+        print()
+        cmin += 1
+
+        for c in range(cmin, cmax + 1):
+            if tnel == 0:
+                break
+            print(arr[rmax][c], end=" ")
+            tnel -= 1
+        print()
+        rmax -= 1
+
+        for r in range(rmax, rmin - 1, -1):
+            if tnel == 0:
+                break
+            print(arr[r][cmax], end=" ")
+            tnel -= 1
+        print()
+        cmax -= 1
+
+        for c in range(cmax, cmin - 1, -1):
+            if tnel == 0:
+                break
+            print(arr[rmin][c], end=" ")
+            tnel -= 1
+        print()
+        rmin += 1
