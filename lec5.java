@@ -56,3 +56,8 @@ public class lec5 {
         stateOfWakanda1(input(scn.nextInt(), scn.nextInt()));
     }
 }
+
+
+// input = [6, 3, 9, 0, 4, 2, 10, 8, 7]
+
+// output = [9, 7, 3, 0, 2, 4, 6, 8, 10]
