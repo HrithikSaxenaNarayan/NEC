@@ -32,7 +32,8 @@ def lucky_number(arr):
                 break
 
         if lucky:
-            print(min_value)            
+            print(min_value)
+            
             
 def exit_point_of_matrix(arr):
 
@@ -74,3 +75,15 @@ def exit_point_of_matrix(arr):
             if i == -1:
                 print(i + 1, j)
                 break
+            
+            
+def diagonalDiff(arr):
+    n = len(arr)
+    m = 0
+    k = 0
+    
+    for i in range(n):
+        m += arr[i][i]
+        k += arr[i][n - i - 1]
+        
+    return (m - k)

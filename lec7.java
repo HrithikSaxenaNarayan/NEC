@@ -1,5 +1,6 @@
 import java.util.*;
-public class lec7{
+
+public class lec7 {
     public static Scanner scn = new Scanner(System.in);
 
     public static int[][] input(int[][] arr) {
@@ -90,6 +91,18 @@ public class lec7{
             }
         }
     }
-    public static void main(String[] args){
+
+    public static int diagonalDiff(int[][] arr) {
+        int n = arr.length;
+        int m = 0, k = 0;
+
+        for (int i = 0; i < n; i++) {
+            m += arr[i][i];
+            k += arr[i][n - i - 1];
+        }
+        return (m - k);
+    }
+
+    public static void main(String[] args) {
     }
 }
