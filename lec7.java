@@ -103,6 +103,17 @@ public class lec7 {
         return (m - k);
     }
 
+    public static void halfUpperDiagonal(int[][] arr) {
+        int n = arr.length, m = arr[0].length;
+        for (int gap = 0; gap < m; gap++) {
+            for (int i = 0, j = gap; i < n && j < m; i++, j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
+        int[][] arr = new int[scn.nextInt()][scn.nextInt()];
     }
 }
