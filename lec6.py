@@ -56,3 +56,8 @@ def state_of_wakanda5_spiral(arr):
             tnel -= 1
         print()
         rmin += 1
+        
+
+
+
+
