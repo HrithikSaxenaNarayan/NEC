@@ -6,8 +6,8 @@ You need to consider every possible substring of the given string and print only
 
 inp: aba      aaa           abc
 opt: a        a             a
-     aba        aa            b
-     b      aaa           c
+     aba      aa            b
+     b        aaa           c
      a        a
               aa
               a
