@@ -12,6 +12,49 @@ def odd_left_even_right(arr):
 
     return arr
 
+def state_of_wakanda1(arr):
+    n = len(arr)
+    m = len(arr[0])
+
+    for j in range(m):
+        if j % 2 == 0:
+            for i in range(n):
+                print(arr[i][j], end="\t")
+        else:
+            for i in range(n - 1, -1, -1):
+                print(arr[i][j], end="\t")
+
+        print()
+
+def state_of_wakanda2(arr):
+    n = len(arr)
+    m = len(arr[0])
+
+    for i in range(n):
+        if i % 2 == 0:
+            for j in range(m):
+                print(arr[i][j], end="\t")
+        else:
+            for j in range(m - 1, -1, -1):
+                print(arr[i][j], end="\t")
+
+        print()
+
+def state_of_wakanda3(arr):
+    n = len(arr)
+    m = len(arr[0])
+
+    for gap in range(m):
+        i = 0
+        j = gap
+
+        while i < n and j < m:
+            print(arr[i][j], end="\t")
+            i += 1
+            j += 1
+
+        print()
+
 
 def state_of_wakanda5_spiral(arr):
     n = len(arr)
