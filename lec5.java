@@ -24,6 +24,29 @@ public class lec5 {
         }
     }
 
+    public static int minimum(int[][] arr) {
+        int minElem = (int) 1e9, row = arr.length, col = arr[0].length;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                minElem = Math.min(arr[i][j], minElem);
+            }
+        }
+        return minElem;
+    }
+
+    public static int maximum(int[][] arr) {
+        int row = arr.length;
+        int col = arr[0].length;
+        int maxElem = -(int) 1e9;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                maxElem = Math.max(maxElem, arr[i][j]);
+            }
+        }
+        return maxElem;
+    }
+
+
     public static void findDataInMattrix(int[][] arr, int data) {
         int n = arr.length;
         int m = arr[0].length;
