@@ -1,6 +1,43 @@
-import java.util.*;
-public class lec4{
+import java.util.Scanner;
+
+public class NumberSystem3 {
     public static Scanner scn = new Scanner(System.in);
+
+    public static int numFrequency(int n, int data) {
+        int count = 0;
+
+        while (n > 0) {
+            int lastDig = n % 10;
+            if (lastDig == data) {
+                count++;
+            }
+            n /= 10;
+        }
+        return count;
+    }
+
+    public static void numFrequencyQueries(long n, int[] query) {
+        int count = 0;
+        int[] ans = new int[10];
+        while (n != 0) {
+            long d = n % 10;
+            n /= 10;
+            ans[(int) d]++;
+        }
+
+        for (int q : query) {
+            System.out.println(q + " : " + ans[q]);
+        }
+    }
+
+    public static int pow(int n) {
+        int pwr = 1;
+        while (n != 0) {
+            n /= 10;
+            pwr *= 10;
+        }
+        return pwr;
+    }
 
     public static int decimalToBinary(int n) {
         int ans = 0;
@@ -27,32 +64,83 @@ public class lec4{
 
     }
 
-    public static void addTwoArrays(int[] arr, int[] brr) {
-        int n = arr.length, m = brr.length;
-        int ansArrlen = Math.max(n, m) + 1;
-        int[] ans = new int[ansArrlen];
-
-        int i = n-1, j = m-1, k = ansArrlen-1, carry = 0;
-
-        while (k >= 0) {
-            int sum = carry + ((i >= 0) ? arr[i] : 0) + ((j >= 0) ? brr[j] : 0);
-            carry = sum / 10;
-            ans[k] = sum % 10;
-
-            i--;
-            j--;
-            k--;
+    public static int decimalToAnyBase(int n, int base) {
+        int pwr = 1;
+        int ans = 0;
+        while (n != 0) {
+            int rem = n % base;
+            ans += rem * pwr;
+            n /= base;
+            pwr *= 10;
         }
-
-        for (int idx = 0; idx < ansArrlen; idx++) {
-            if (idx == 0 && ans[idx] == 0) {
-                continue;
-            }
-            System.out.print(ans[idx] + "\t");
-        }
+        return ans;
     }
 
-    public static void main(String[] ARGS) {
-        decimalToBinary(scn.nextInt());
+    public static int anyBaseToDecimal(int n, int base) {
+        int pwr = 1;
+        int ans = 0;
+        while (n != 0) {
+            int rem = n % 10;
+            ans += rem * pwr;
+            n /= 10;
+            pwr *= base;
+        }
+        return ans;
+    }
+
+    public static int anyBaseToAnyBase(int n, int b1, int b2) {
+        return decimalToAnyBase(anyBaseToDecimal(n, b1), b2);
+    }
+
+    public static int anyBaseAddition(int n, int m, int base) {
+        int pwr = 1;
+        int ans = 0, carry = 0;
+        while(n != 0 || m != 0 || carry != 0) {
+            int sum = carry + (n % 10) + (m % 10);
+            n /= 10;
+            m /= 10;
+
+            int ansLastDig = sum % base;
+            carry = sum / base;
+
+            ans += ansLastDig * pwr;
+            pwr *= 10;
+        }
+        return ans;
+    }
+
+
+    public static int anyBaseSub(int n, int m, int base) {
+        int pwr = 1;
+        int ans = 0, borrow = 0; 
+        while (n != 0) { 
+            int diff = borrow + (n % 10) - (m % 10);
+            n /= 10;
+            m /= 10;
+
+            if(diff < 0) {
+                borrow = -1;
+                diff += base;
+            }
+            else {
+                borrow = 0;
+            }
+
+            ans += diff * pwr;
+            pwr *= 10;
+
+        }
+        return ans;
+    }
+
+
+    public static void main(String[] args) {
+        // int[] query = new int[scn.nextInt()];
+        // for (int i = 0; i < query.length; i++) {
+        // query[i] = scn.nextInt();
+        // }
+        // numFrequencyQueries(scn.nextLong(), query);
+
+        System.out.print(anyBaseSub(scn.nextInt(), scn.nextInt(), scn.nextInt()));
     }
 }
