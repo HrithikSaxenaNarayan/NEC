@@ -38,3 +38,81 @@ def string_compression_counts(string):
     print(ans)
 
 
+def count_of_hi(s):
+    length = len(s)
+    i = 0
+    count = 0
+
+    s = s.lower()
+
+    while i < length - 1:
+        if s[i] == 'h' and s[i + 1] == 'i':
+            count += 1
+            i += 2
+        else:
+            i += 1
+
+    print(count)
+    
+    
+def count_of_hi_in_hit(s):
+    length = len(s)
+    i = 0
+    count = 0
+
+    while i < length - 1:
+        if s[i] == 'h' and s[i + 1] == 'i':
+
+            if i + 2 < length and s[i + 2] == 't':
+                i += 3
+            else:
+                count += 1
+                i += 2
+
+        else:
+            i += 1
+
+    return count
+
+
+def remove_hi(s):
+    str1 = ""
+    length = len(s)
+    i = 0
+
+    while i < length:
+
+        if i + 1 < length and s[i] == 'h' and s[i + 1] == 'i':
+
+            if i + 2 < length and s[i + 2] == 't':
+                str1 += "hi"
+                i += 2
+            else:
+                i += 2
+
+        else:
+            str1 += s[i]
+            i += 1
+
+    print(str1)
+    
+    
+def remove_hit(s):
+    str1 = ""
+    length = len(s)
+    i = 0
+
+    while i < length:
+
+        if (i + 2 < length and
+            s[i] == 'h' and
+            s[i + 1] == 'i' and
+            s[i + 2] == 't'):
+
+            i += 3
+
+        else:
+            str1 += s[i]
+            i += 1
+
+    print(str1)
