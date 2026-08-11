@@ -1,13 +1,2 @@
-Question: Print All Palindromic Substrings
-Problem Statement:
-Given a string str, print all possible substrings that are palindromes.
-A substring is a palindrome if it reads the same forward and backward.
-You need to consider every possible substring of the given string and print only those substrings that are palindromes.
-
-inp: aba      aaa           abc
-opt: a        a             a
-     aba      aa            b
-     b        aaa           c
-     a        a
-              aa
-              a
+inp: aaaaabbcdeffffgggh
+out: a:5 b:2 c d e f:4 g:3 h
