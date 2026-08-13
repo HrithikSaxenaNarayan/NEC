@@ -1,8 +1,19 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 public class lec11 {
 
     public static Scanner scn = new Scanner(System.in);
+
+    public static ArrayList<Integer> arrayListInput(int n) {
+        ArrayList<Integer> arrLst = new ArrayList<>();
+
+        for (Integer i = 0; i < n; i++) {
+            arrLst.add(scn.nextInt());
+        }
+
+        return arrLst;
+    }
 
     public static void arrayLstOps() {
         ArrayList<Integer> arrLst = new ArrayList<>();
@@ -33,7 +44,59 @@ public class lec11 {
         arrLst.remove(2);
     }
 
+    public static void swap(ArrayList<Integer> arrLst, int i, int j) {
+        int temp = arrLst.get(i);
+        arrLst.set(i, arrLst.get(j));
+        arrLst.set(j, temp);
+    }
+
+    public static Boolean isPrime(int n) {
+        if (n < 2)
+            return false;
+
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void removePrimeNumbers(int n) {
+        ArrayList<Integer> arrLst = arrayListInput(n);
+        ArrayList<Integer> arrLst1 = new ArrayList<>();
+        int i = arrLst.size() - 1;
+        while (i >= 0) {
+            if (isPrime(arrLst.get(i))) {
+                swap(arrLst, i, arrLst.size() - 1);
+                int removedElem = arrLst.remove(arrLst.size() - 1);
+                arrLst1.add(removedElem);
+            }
+            i--;
+        }
+        System.out.print(arrLst);
+        System.out.print(arrLst1);
+        System.out.println("\nFncn DONE");
+
+    }
+
+    public static void removePrime1(ArrayList<Integer> arrLst) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        for (int elem : arrLst) {
+            if (!isPrime(elem)) {
+                ans.add(elem);
+            }
+        }
+        // arrLst.clear();
+        while (arrLst.size() - 1 != 0) {
+            arrLst.remove(arrLst.size() - 1);
+        }
+        for (int elem : ans) {
+            arrLst.add(elem);
+        }
+        System.out.print(arrLst);
+    }
+
     public static void main(String[] args) {
-        
+
     }
 }
