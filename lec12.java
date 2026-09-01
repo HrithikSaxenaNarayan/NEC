@@ -22,8 +22,24 @@ public class lec12{
         }
     }
 
+    public static ArrayList<Integer> arrToMap(int n) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (Integer i = 0; i < n; i++) {
+            arr.add(scn.nextInt());
+        }
+        return arr;
+    }
+
+    public static HashMap<Integer, Integer> countFreq(ArrayList<Integer> arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (Integer i = 0; i < arr.size(); i++) {
+            map.put(arr.get(i), map.getOrDefault(arr.get(i), 0) + 1);
+        }
+        return map;
+    }
 
     public static void main(String[] args){
-        // newFunc(scn.nextInt());
+        displayGen(countFreq(arrToMap(scn.nextInt())));
     }
 }

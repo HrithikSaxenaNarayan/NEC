@@ -1,24 +1,46 @@
-class Lec12:
+def input_map(n):
+    map_data = {}
 
-    @staticmethod
-    def input(n):
-        map_data = {}
+    for i in range(n):
+        map_data[i] = int(input())
 
-        for i in range(n):
-            map_data[i] = int(input())
-
-        return map_data
-
-    @staticmethod
-    def display(map_data):
-        for key, value in map_data.items():
-            print(f"{key}: {value}")
-
-    @staticmethod
-    def display_gen(map_data):
-        for key, value in map_data.items():
-            print(f"{key}: {value}")
+    return map_data
 
 
-if __name__ == "__main__":
-    pass
+def display(map_data):
+    for key, value in map_data.items():
+        print(f"{key}: {value}")
+
+
+def display_gen(map_data):
+    for key, value in map_data.items():
+        print(f"{key}: {value}")
+
+
+def arr_to_map(n):
+    arr = []
+
+    for i in range(n):
+        arr.append(int(input()))
+
+    return arr
+
+
+def count_freq(arr):
+    map_data = {}
+
+    for i in range(len(arr)):
+        value = arr[i]
+
+        if value in map_data:
+            map_data[value] += 1
+        else:
+            map_data[value] = 1
+
+    return map_data
+
+
+# main
+n = int(input())
+
+display_gen(count_freq(arr_to_map(n)))
