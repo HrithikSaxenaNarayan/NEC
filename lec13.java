@@ -13,13 +13,20 @@ public class lec13{
         return arr;
     }
 
-
     public static void printArr(int[] arr, int idx){
         if (idx == arr.length) {
             return;
         }
         System.out.print(arr[idx] + "\t");
         printArr(arr, idx + 1);
+    }
+
+    public static int maximum(int[] arr, int idx){
+
+    }
+
+    public static int minimum(int[] arr, int idx){
+
     }
 
     public static void main(String[] args){

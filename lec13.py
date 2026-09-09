@@ -15,6 +15,10 @@ def print_arr(arr, idx):
     print(arr[idx], end="\t")
     print_arr(arr, idx + 1)
 
+def maximum (arr, idx):
+    
+    
+def minimum (arr, idx):
 
 n = int(input())
 val = int(input())
