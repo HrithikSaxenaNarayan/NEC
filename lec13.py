@@ -35,9 +35,16 @@ def minimum(arr, idx):
 
 
 def find(arr, idx, data):
-
-
-
+    if (idx == len(arr)):
+        return False
+    
+    if (arr[idx] == data):
+        return True
+    
+    return find(arr, idx + 1, data)
+    
+    
+    
 n = int(input())
 val = int(input())
 

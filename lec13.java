@@ -1,19 +1,20 @@
 import java.util.*;
-public class lec13{
+
+public class lec13 {
     public static Scanner scn = new Scanner(System.in);
 
-    public static int[] inputArr(int n, int val){
+    public static int[] inputArr(int n, int val) {
         if (n == 0) {
             return new int[val];
         }
 
-        int[] arr = inputArr(n-1, val);
-        arr[n-1] = scn.nextInt();
+        int[] arr = inputArr(n - 1, val);
+        arr[n - 1] = scn.nextInt();
 
         return arr;
     }
 
-    public static void printArr(int[] arr, int idx){
+    public static void printArr(int[] arr, int idx) {
         if (idx == arr.length) {
             return;
         }
@@ -21,28 +22,38 @@ public class lec13{
         printArr(arr, idx + 1);
     }
 
-    public static int maximum(int[] arr, int idx){
+    public static int maximum(int[] arr, int idx) {
         if (idx == arr.length) {
             return -(int) 1e9;
         }
 
         int max = maximum(arr, idx + 1);
-        return  Math.max(max, arr[idx]);
+        return Math.max(max, arr[idx]);
     }
 
-    public static int minimum(int[] arr, int idx){
+    public static int minimum(int[] arr, int idx) {
         if (idx == arr.length) {
             return (int) 1e9;
         }
 
         int min = minimum(arr, idx + 1);
-        return  Math.min(min, arr[idx]);
+        return Math.min(min, arr[idx]);
     }
 
     public static boolean find(int[] arr, int idx, int data) {
-        
+        if (idx == arr.length) {
+            return false;
+        }
+
+        if (arr[idx] == data) {
+            return true;
+        }
+        return find(arr, idx + 1, data);
     }
-    public static void main(String[] args){
+
+    // arr = [ 1, 1, 2, 4, 6, 2, 7, 7, 0, 6, 2, 5, 3, 2, 5, 2, 2, 2]; // 2
+
+    public static void main(String[] args) {
         printArr(inputArr(scn.nextInt(), scn.nextInt()), 0);
     }
 }
