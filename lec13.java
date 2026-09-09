@@ -22,13 +22,26 @@ public class lec13{
     }
 
     public static int maximum(int[] arr, int idx){
+        if (idx == arr.length) {
+            return -(int) 1e9;
+        }
 
+        int max = maximum(arr, idx + 1);
+        return  Math.max(max, arr[idx]);
     }
 
     public static int minimum(int[] arr, int idx){
+        if (idx == arr.length) {
+            return (int) 1e9;
+        }
 
+        int min = minimum(arr, idx + 1);
+        return  Math.min(min, arr[idx]);
     }
 
+    public static boolean find(int[] arr, int idx, int data) {
+        
+    }
     public static void main(String[] args){
         printArr(inputArr(scn.nextInt(), scn.nextInt()), 0);
     }
