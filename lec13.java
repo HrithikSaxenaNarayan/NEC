@@ -53,6 +53,25 @@ public class lec13 {
 
     // arr = [ 1, 1, 2, 4, 6, 2, 7, 7, 0, 6, 2, 5, 3, 2, 5, 2, 2, 2]; // 2
 
+    public static int firstIdx(int[] arr, int idx, int data) {
+
+    }
+
+    public static int lastIdx(int[] arr, int idx, int data) {
+        
+    }
+
+    public static int[] firstAndLastIdx(int[] arr, int idx, int data) {
+        
+    }
+
+    public static int countOfIdx(int[] arr, int idx, int data) {
+        
+    }
+
+    public static int[] allIdx(int[] arr, int idx, int data) {  // you can take 1 more formal parameter but not an array.
+        
+    }
     public static void main(String[] args) {
         printArr(inputArr(scn.nextInt(), scn.nextInt()), 0);
     }

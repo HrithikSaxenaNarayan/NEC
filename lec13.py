@@ -44,6 +44,17 @@ def find(arr, idx, data):
     return find(arr, idx + 1, data)
     
     
+def first_idx(arr, idx, data):
+    
+def last_idx(arr, idx, data):
+    
+def first_and_last_idx(arr, idx, data):
+    
+def count_of_idx(arr, idx, data):
+
+def all_idx(arr, idx, data):   # you can take 1 extra formal parameter but not an array.
+
+    
     
 n = int(input())
 val = int(input())
