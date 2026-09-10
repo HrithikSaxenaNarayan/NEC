@@ -122,6 +122,24 @@ public class lec13 {
         return false;
     }
 
+    public static ArrayList<String> subSeq(String str) {
+
+    }
+    // Get KPC number against characters.
+    // "0" -> ".;"
+    // "1" -> "abc" 
+    // "2" -> "def" 
+    // "3" -> "ghi" 
+    // "4" -> "jkl" 
+    // "5" -> "mno" 
+    // "6" -> "pqrs" 
+    // "7" -> "tu" 
+    // "8" -> "vwx"
+    // "9" -> "yz"
+    public static ArrayList<String> getKPC(String str) {
+
+    }
+
     public static void main(String[] args) {
         printArr(inputArr(scn.nextInt(), scn.nextInt()), 0);
     }
