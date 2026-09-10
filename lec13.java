@@ -125,6 +125,7 @@ public class lec13 {
     public static ArrayList<String> subSeq(String str) {
 
     }
+
     // Get KPC number against characters.
     // "0" -> ".;"
     // "1" -> "abc" 
