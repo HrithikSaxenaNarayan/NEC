@@ -114,7 +114,20 @@ def first_and_last_idx(arr, i, data, ans):
 
     return False
 
-def sub_seq(string):
+def subSeq(s):
+    if len(s) == 0:
+        return [""]
+
+    ch = s[0]
+    recAns = subSeq(s[1:])
+
+    newAns = recAns.copy()
+
+    for sub in recAns:
+        newAns.append(ch + sub)
+
+    return newAns
+
     
     
 # Get KPC number against characters.
