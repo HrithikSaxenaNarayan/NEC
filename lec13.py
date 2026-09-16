@@ -141,7 +141,28 @@ def subSeq(s):
 #  "7" -> "tu" 
 #  "8" -> "vwx"
 #  "9" -> "yz"
+nokia_keys = [".;", "abc", "def", "ghi", "jkl",
+              "mno", "pqrs", "tu", "vwx", "yz"]
+
+
 def get_kpc(string):
+    if len(string) == 0:
+        return [""]
+        
+    ch = string[0]
+
+
+    code = nokia_keys[int(ch)]
+
+    rec_ans = get_kpc(string[1:])
+
+    new_ans = []
+
+    for i in range(len(code)):
+        for s in rec_ans:
+            new_ans.append(code[i] + s)
+
+    return new_ans
     
     
 n = int(input())
