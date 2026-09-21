@@ -8,9 +8,7 @@ public class co {
         int rom;
         int btry;
 
-        {
-            System.out.println(this);
-        }
+    
 
         // -----------------------------------Example of constructor
         // overloading---------------------
@@ -97,11 +95,14 @@ public class co {
     }
 
     public static void main(String[] args) {
-        phone p1 = new phone("Google Pixel", "10 pro xl", "gray", 256, 6000);
-        // p1.brand = "Google pixel"; // p1 is an obj and same as this keyword.
-        // p1.ram = 12;
-        System.out.println(p1.displayObj());
-        System.out.println(displayOut(p1));
-        // System.out.println(p1);
+        // phone p1 = new phone("Google Pixel", "10 pro xl", "gray", 256, 6000);
+        // // p1.brand = "Google pixel"; // p1 is an obj and same as this keyword.
+        // // p1.ram = 12;
+        // System.out.println(p1.displayObj());
+        // System.out.println(displayOut(p1));
+        // // System.out.println(p1);
+
+        phone ph1 = new phone();
+        
     }
 }
