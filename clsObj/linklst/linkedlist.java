@@ -33,6 +33,7 @@ public class linkedlist {
             node.next = this.head;
             this.head = node;
         }
+this.size++;
     }
 
 }
