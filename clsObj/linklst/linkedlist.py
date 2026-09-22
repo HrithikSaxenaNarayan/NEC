@@ -26,3 +26,5 @@ class LinkedList:
         else:
             node.next = self.head
             self.head = node
+
+        self.size += 1
