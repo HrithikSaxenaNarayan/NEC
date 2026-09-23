@@ -71,4 +71,43 @@ public class linkedlist {
         return node;
     }
 
+     public int getFirst() {
+        if (isSizeEmpty()) {
+            return -1;
+        }
+        return getFirstNode().data;
+    }
+
+    private Node getFirstNode() {
+        Node node = this.head;
+        return node;
+    }
+
+    public int getLast() {
+        if (this.size == 0) {
+            return -1;
+        }
+        return getLastNode().data;
+    }
+
+    private Node getLastNode() {
+        return this.tail;
+    }
+
+    public int getAt(int idx) {
+        if (isSizeEmpty() || idx > this.size) {
+            return -1;
+        }
+        Node node = getAtNode(idx);
+        return node.data;
+    }
+
+    private Node getAtNode(int idx) {
+        Node curr = this.head;
+        while (idx-- > 0) {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
 }
