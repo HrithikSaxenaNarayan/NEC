@@ -36,4 +36,39 @@ public class linkedlist {
         this.size++;
     }
 
+     public void lastNode(int data) {
+        Node node = new Node(data);
+        addLastNode(node);
+    }
+
+    private void addLastNode(Node node) {
+        if (this.size == 0) {
+            this.head = this.tail = node;
+        } else {
+            this.tail.next = node;
+            this.tail = node;
+        }
+        this.size++;
+    }
+
+    public int removeFirst(int data) {
+        if (this.size == 0) {
+            return -1;
+        }
+        Node node = removeFirstNode();
+        return node.data;
+    }
+
+    private Node removeFirstNode() {
+        Node node = this.head;
+        if (this.size == 1) {
+            this.head = this.tail = null;
+        } else {
+            this.head = this.head.next;
+            node.next = null;
+        }
+        this.size--;
+        return node;
+    }
+
 }
