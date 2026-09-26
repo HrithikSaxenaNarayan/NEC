@@ -114,3 +114,26 @@ class LinkedList:
             idx -= 1
 
         return curr
+
+    def remove_last(self):
+    if self.is_size_empty():
+        return -1
+
+    node = self.remove_last_node()
+    return node.data
+
+
+    def remove_last_node(self):
+        node = self.tail
+    
+        if self.size == 1:
+            self.head = self.tail = None
+        else:
+            second_last_node = self.get_at_node(self.size - 2)
+    
+            second_last_node.next = None
+            self.tail = second_last_node
+    
+        self.size -= 1
+    
+        return node
