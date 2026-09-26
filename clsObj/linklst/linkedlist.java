@@ -110,4 +110,31 @@ public class linkedlist {
         return curr;
     }
 
+        if (isEmpty()) {
+            return -1;
+        }
+
+        Node node = removeLastNode();
+        return node.data;
+    }
+
+    private Node removeLastNode() {
+        Node node = this.tail;
+        if (this.size == 1) {
+            this.head = this.tail = null;
+        } else {
+            // for (int i = 0; i < size; i++) {
+            // if (i == this.size-2) {
+            // node.next = null;
+            // this.tail = node;
+            // } or
+            // }
+            Node secondLastNode = getAtNode(this.size - 2);
+            secondLastNode.next = null;
+            this.tail = secondLastNode;
+        }
+        this.size--;
+        return node;
+    }
+
 }
